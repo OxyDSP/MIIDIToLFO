@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MIIDIToLFO.Avalonia.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:MIIDIToLFO.Avalonia.Views"
+        mc:Ignorable="d"
+        x:Class="MIIDIToLFO.Avalonia.Views.MainWindow"
+        Icon="/Assets/O_Logo.ico"
+        Title="MIIDIToLFO"
+		Width="800"
+		Height="330"
+		CanResize="False"
+		DragDrop.AllowDrop="True"
+		Background="#FF1C2024">
+	<views:MainView />
+</Window>

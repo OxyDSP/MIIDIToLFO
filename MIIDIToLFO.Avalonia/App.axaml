@@ -1,0 +1,13 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             x:Class="MIIDIToLFO.Avalonia.App"
+             RequestedThemeVariant="Dark"
+             Name="MIIDIToLFO">
+    <Application.Styles>
+		<FluentTheme></FluentTheme>
+    </Application.Styles>
+  <NativeMenu.Menu>
+    <NativeMenu></NativeMenu>
+  </NativeMenu.Menu>
+</Application>

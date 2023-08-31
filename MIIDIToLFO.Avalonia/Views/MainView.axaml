@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MIIDIToLFO.Avalonia.ViewModels"
+             mc:Ignorable="d"
+             x:Class="MIIDIToLFO.Avalonia.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+
+	<Grid ColumnDefinitions="10,*,*,*,10" RowDefinitions="10,*,10">
+		<StackPanel HorizontalAlignment="Stretch" Grid.Column="2" Grid.Row="1" Spacing="5">
+			<TextBox Name="fileNameTextBox" HorizontalAlignment="Stretch"></TextBox>
+			<Grid ColumnDefinitions="*,5,*">
+				<Button Content="Convert Serum" Click="OnConvertSerum" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="0"></Button>
+				<Button Content="Convert Vital" Click="OnConvertVital" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2"></Button>
+			</Grid>
+			<TextBox Name="outputTextBox" HorizontalAlignment="Stretch" Height="200" LineHeight="20" IsReadOnly="True" TextWrapping="WrapWithOverflow" MaxLines="10" ScrollViewer.HorizontalScrollBarVisibility="Disabled"></TextBox>
+			<Button Click="OnLogoClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" ToolTip.Tip="Visit oxydsp.com">
+				<Button.Content>
+					<Image Source="/Assets/Logo_White_100.png" Width="100"></Image>
+				</Button.Content>
+			</Button>
+		</StackPanel>
+
+		<StackPanel HorizontalAlignment="Right" Width="200" Grid.Column="3" Grid.Row="1">
+			<CheckBox Content="Ignore Gate" Name="ignoreGateCheckbox" Click="OnIgnoreGateClicked"></CheckBox>
+			<CheckBox Content="Ignore Pitch" Name="ignorePitchCheckbox" Click="OnIgnorePitchClicked"></CheckBox>
+			<CheckBox Content="Read Velocity" Name="readVelocityCheckbox" Click="OnReadVelocityClicked"></CheckBox>
+			<CheckBox Content="Absolute Pitch" Name="absolutePitchCheckbox" Click="OnAbsolutePitchClicked"></CheckBox>
+			<CheckBox Content="Optimize Shapes" Name="optimizeShapesCheckbox" Click="OnOptimizeShapesClicked"></CheckBox>
+			<CheckBox Content="Length pow2" Name="lengthPow2Checkbox" Click="OnLengthPow2Clicked"></CheckBox>
+			<ComboBox Name="gateTruncateComboBox" SelectionChanged="OnGateTruncateSelectionChanged" SelectedIndex="0" Width="190">
+				<ComboBoxItem>GateTruncate - Off</ComboBoxItem>
+				<ComboBoxItem>GateTruncate - 1 Bar</ComboBoxItem>
+				<ComboBoxItem>GateTruncate - 2 Bar</ComboBoxItem>
+				<ComboBoxItem>GateTruncate - 4 Bar</ComboBoxItem>
+				<ComboBoxItem>GateTruncate - 8 Bar</ComboBoxItem>
+				<ComboBoxItem>GateTruncate - 16 Bar</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+
+		<StackPanel HorizontalAlignment="Left" Spacing="5" Width="200" Grid.Column="1" Grid.Row="1">
+			<Button Content="Set Input MIDI" Click="OnSetInputMIDI" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"></Button>
+			<Button Content="Set Serum Folder" Click="OnSetSerumFolder" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"></Button>
+			<Button Content="Set Vital Folder" Click="OnSetVitalFolder" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"></Button>
+			<Button Content="Show Serum Folder" Click="OnShowSerumFolder" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"></Button>
+			<Button Content="Show Vital Folder" Click="OnShowVitalFolder" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" ></Button>
+			<Button Content="Show Data Folder" Click="OnShowDataFolder" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"></Button>
+		</StackPanel>
+		
+		<Label Name="versionLabel" Foreground="White" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1"></Label>
+	</Grid>
+</UserControl>

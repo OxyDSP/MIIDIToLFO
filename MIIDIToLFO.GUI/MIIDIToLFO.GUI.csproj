@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!--If you are willing to use Windows/MacOS native APIs you will need to create 3 projects.
+    One for Windows with net7.0-windows TFM, one for MacOS with net7.0-macos and one with net7.0 TFM for Linux.-->
+    <TargetFramework>net7.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
+    <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
+    <Nullable>enable</Nullable>
+    <AssemblyName>MIIDIToLFO</AssemblyName>
+    <PackageIcon>O_Logo_2k.png</PackageIcon>
+    <ApplicationIcon>O_Logo.ico</ApplicationIcon>
+	<PublishSingleFile>true</PublishSingleFile>
+	<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+	<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+	<DebugType>embedded</DebugType>
+    <UseAppHost>true</UseAppHost>
+    <SelfContained>false</SelfContained>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Configurations>Release;Debug</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CFBundleName>MIIDIToLFO</CFBundleName>
+    <CFBundleDisplayName>MIIDIToLFO</CFBundleDisplayName>
+    <CFBundleIdentifier>com.oxydsp.miiditolfo</CFBundleIdentifier>
+    <CFBundleShortVersionString>1.0.0</CFBundleShortVersionString>
+    <CFBundlePackageType>APPL</CFBundlePackageType>
+    <CFBundleExecutable>MIIDIToLFO</CFBundleExecutable>
+    <CFBundleIconFile>AppIcon.icns</CFBundleIconFile>
+    <NSPrincipalClass>NSApplication</NSPrincipalClass>
+    <NSHighResolutionCapable>true</NSHighResolutionCapable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="O_Logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppIcon.icns">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+	
+  <ItemGroup>
+    <None Include="..\MIIDIToLFO.Avalonia\Assets\O_Logo_2k.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.4" />
+    <PackageReference Include="Dotnet.Bundle" Version="0.9.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MIIDIToLFO.Lib\MIIDIToLFO.Lib.csproj" />
+    <ProjectReference Include="..\MIIDIToLFO.Avalonia\MIIDIToLFO.Avalonia.csproj" />
+  </ItemGroup>
+</Project>
