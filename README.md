@@ -1,7 +1,7 @@
 ## MIIDIToLFO
 MIIDIToLFO is a free .NET app for Windows, macOS and Linux to convert MIDI files to LFO shapes for the [Serum](https://xferrecords.com/products/serum/) and [Vital](https://vital.audio/) synthesizers.  
 
-![MIIDIToLFO](https://github.com/OxyDSP/MIIDIToLFO/assets/143701449/6e09ac8a-6a1b-47b6-96a0-aa582cde67d8)
+![MIIDIToLFO](https://github.com/OxyDSP/MIIDIToLFO/assets/143701449/5bc49df6-4e13-4bcc-84fe-4f729abcfd11)
 
 The conversion creates both Pitch and Gate shapes to properly represent note lengths and optionally note velocities.  
 This allows you to quickly create sequenced patches, which would otherwise be very tedious as both synths don't include a sequencer.
